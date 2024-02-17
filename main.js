@@ -10,6 +10,19 @@ $('document').ready(() => {
         reset();
     })
 
+    $('textarea').on('keyup', () => {
+        const textarea = document.getElementsByTagName('textarea')[0];
+        if (textarea.value.length > 39 && textarea.value.length <= 78) {
+            textarea.setAttribute('rows', '2');
+        } else if (textarea.value.length > 78 && textarea.value.length <= 117) {
+            textarea.setAttribute('rows', '3');
+        } else if (textarea.value.length > 117) {
+            textarea.setAttribute('rows', '4');
+        } else {
+            textarea.setAttribute('rows', '1');
+        }
+    })
+
     $('.addTarefa').click(() => {
         $('.form').slideDown().css('display', 'flex');
     })
@@ -136,13 +149,38 @@ $('document').ready(() => {
     }
 
     function editTarefa(li, tarefa) {
-        li.innerHTML = `
-            <div>
-                <input type="checkbox" id="${tarefa.id}">
-                <label for="${tarefa.id}"><i class="fa-solid fa-check"></i></label>
-                <textarea rows="1">${tarefa.desc}</textarea>
-            </div>
-        `;
+        li.innerHTML = ``;
+        const divTarefa = document.createElement('div');
+
+        const input = document.createElement('input');
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('id', `${tarefa.id}`);
+
+        const label = document.createElement('label');
+        label.setAttribute('for', `${tarefa.id}`);
+        label.innerHTML = `<i class="fa-solid fa-check"></i>`;
+
+        const textarea = document.createElement('textarea');
+        textarea.setAttribute('maxlength', '132');
+        if (tarefa.desc.length <= 66) {
+            textarea.setAttribute('rows', '1');
+        }
+        if (tarefa.desc.length > 66) {
+            textarea.setAttribute('rows', '2');
+        }
+        textarea.innerText = `${tarefa.desc}`
+        textarea.addEventListener('keyup', () => {
+            if (textarea.value.length > 66) {
+                textarea.setAttribute('rows', '2');
+            } else {
+                textarea.setAttribute('rows', '1');
+            }
+        })
+
+        divTarefa.appendChild(input);
+        divTarefa.appendChild(label);
+        divTarefa.appendChild(textarea);
+        li.appendChild(divTarefa);
 
         const div = document.createElement('div');
 

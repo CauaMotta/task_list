@@ -75,8 +75,11 @@ header {
 }
 
 form {
+    max-width: 768px;
+    width: 100%;
     display: flex;
     gap: 1rem;
+    justify-content: center;
     align-items: center;
 }
 
@@ -85,7 +88,8 @@ form textarea {
     border: 3px solid #144272;
     border-radius: 1rem;
     resize: none;
-    width: 350px;
+    max-width: 360px;
+    width: 100%;
     padding: 0.5rem;
     outline: none;
     color: rgba(255, 255, 255, 0.75);
@@ -142,7 +146,7 @@ ul li {
     background-color: #144272;
     max-width: 768px;
     width: 75%;
-    height: 75px;
+    min-height: 75px;
     padding-inline: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
@@ -153,7 +157,7 @@ ul li {
 ul li:hover {
     opacity: 1;
     width: 100%;
-    height: 85px;
+    min-height: 85px;
     cursor: pointer;
 }
 
@@ -164,6 +168,9 @@ ul li div {
 }
 
 ul li p {
+    max-width: 580px;
+    width: 100%;
+    word-break: break-all;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -191,13 +198,13 @@ button:disabled i:hover {
 .editActive{
     opacity: 1;
     width: 100%;
-    height: 85px;
+    min-height: 85px;
 }
 
 .disabled:hover {
     opacity: 0.75;
     width: 75%;
-    height: 75px;
+    min-height: 75px;
     cursor: default;
 }
 
@@ -238,6 +245,7 @@ input[type='checkbox']:checked + label{
 }
 
 ul li textarea {
+    width: 580px;
     outline: 0;
     background-color: transparent;
     border: none;

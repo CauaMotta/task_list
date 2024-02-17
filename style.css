@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A2647;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #144272;
+}
+
+.header {
+    max-width: 992px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.8;
+}
+
+.header i {
+    font-size: 1.5rem;
+}
+
+.header button {
+    background-color: #205295;
+    border: none;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    outline: 0;
+}
+
+.header button:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form {
+    max-width: 992px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+form textarea {
+    background-color: transparent;
+    border: 3px solid #144272;
+    border-radius: 1rem;
+    resize: none;
+    width: 350px;
+    padding: 0.5rem;
+    outline: none;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+form button {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 3px solid #144272;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: 0;
+}
+
+form button i {
+    color: #144272 !important;
+}
+
+form button:hover {
+    border-color: green;
+    i {
+        color: green !important;
+    }
+}
+
+#btn-cancel:hover {
+    border-color: darkred;
+    i {
+        color: darkred !important;
+    }
+}
+
+hr {
+    width: 100%;
+    margin-top: 1rem;
+    border: 3px solid #144272;
+    border-radius: 1rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    max-width: 992px;
+    width: 100%;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #144272;
+    max-width: 768px;
+    width: 75%;
+    height: 75px;
+    padding-inline: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    opacity: 0.75;
+}
+
+ul li:hover {
+    opacity: 1;
+    width: 100%;
+    height: 85px;
+    cursor: pointer;
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+ul li p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+ul li button {
+    outline: 0;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+ul li button i {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+
+ul li button i:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+button:disabled i:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.editActive{
+    opacity: 1;
+    width: 100%;
+    height: 85px;
+}
+
+.disabled:hover {
+    opacity: 0.75;
+    width: 75%;
+    height: 75px;
+    cursor: default;
+}
+
+.notfoundtext {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.notfoundtext i {
+    margin-right: 0.5rem;
+    vertical-align: sub;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input[type='checkbox'] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+label {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+label:hover {
+    opacity: 1;
+}
+
+input[type='checkbox']:checked + label{
+    opacity: 1;
+}
+
+ul li textarea {
+    outline: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #205295;
+    resize: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+ul li textarea:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
+.container-concluidas {
+    max-width: 992px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-concluidas h3 {
+    display: block;
+    max-width: 768px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+}
+
+.container-concluidas h3 i {
+    color: rgba(255, 255, 255, 0.8);
+}
